@@ -44,11 +44,7 @@
                                         <form id="mnt_form" class="needs-validation custom-form mt-4 pt-2" novalidate="" action="index.html">
                                             <div class="mb-3">
                                                 <label for="usu_correo" class="form-label">Correo Electrónico</label>
-<<<<<<< HEAD
-                                                <input type="text" class="form-control" id="usu_correo" name="usu_correo" placeholder="zzz@zzz.es" required="">  
-=======
                                                 <input type="text" class="form-control" id="usu_correo" name="usu_correo" placeholder="Ingrese Correo Electronico" required="">  
->>>>>>> b9f892a12da9d0cb109c3ff005112dc818d85bf4
                                                 <div class="validation-error text-danger"></div>      
                                             </div>
                     

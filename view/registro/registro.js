@@ -19,9 +19,7 @@ function init() {
 
 function isFormValid(){
     /* TODO: Usa Validator.js para validar cada campo del formulario */
-<<<<<<< HEAD
     return validateEmail() && validateText("usu_nomape") && validatePassword() && validatePasswordMatch();
-=======
     return validateEmail();
 }
 
@@ -44,7 +42,7 @@ function displayErrorMessage(fieldSelector, isValid,message){
 function displayValidationMessages(){
      /* TODO: Muestra mensajes de error cerca de los campos del formulario */
     validateEmail();
->>>>>>> b9f892a12da9d0cb109c3ff005112dc818d85bf4
+
 }
 
 function validateEmail(){
@@ -77,7 +75,7 @@ function validatePasswordMatch(){
     var confirmPassword = $("#usu_pass_confir").val();
     var isValid = validator.equals(password,confirmPassword);
     /* TODO:Muestra el mensaje de error si la validación no es exitosa */
-    displayErrorMessage("#usu_pass_confir" ,isValid,"Las contraseñas no coinciden.");
+    displayErrorMessage("#usu_pass_confir" ,isValid,"Las contraseñas no coinciden. ");
     return isValid;
 }
 
@@ -107,11 +105,13 @@ function registrar(){
         contentType:false,
         processData:false,
         success: function(datos){
-            console.log("Guardado: " + datos);
+            console.log(datos);
         }
     });
 }
 
 init();
+
+// Test
 
 
