@@ -9,6 +9,9 @@
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description">
         <meta content="Themesbrand" name="author">
 
+         <!-- Sweet Alert-->
+         <link href="../../assests/css/sweetalert2.min.css" rel="stylesheet" type="text/css">
+
         <!-- preloader css -->
         <link rel="stylesheet" href="../../assests/css/preloader.min.css" type="text/css">
 
@@ -233,6 +236,9 @@
         <script src="../../assests/js/feather.min.js"></script>
         <!-- pace js -->
         <script src="../../assests/js/pace.min.js"></script>
+
+        <!-- Sweet Alerts js -->
+        <script src="../../assests/js/sweetalert2.min.js"></script>
 
         <!-- validation init -->
         <!-- <script src="../../assests/js/validation.init.js"></script> -->
