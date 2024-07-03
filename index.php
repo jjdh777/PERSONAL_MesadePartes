@@ -10,14 +10,14 @@
         <meta content="Themesbrand" name="author">
 
         <!-- preloader css -->
-        <link rel="stylesheet" href="assests/css/preloader.min-1.css" type="text/css">
+        <link rel="stylesheet" href="assets/css/preloader.min-1.css" type="text/css">
 
         <!-- Bootstrap Css -->
-        <link href="assests/css/bootstrap.min-1.css" id="bootstrap-style" rel="stylesheet" type="text/css">
+        <link href="assets/css/bootstrap.min-1.css" id="bootstrap-style" rel="stylesheet" type="text/css">
         <!-- Icons Css -->
-        <link href="assests/css/icons.min-1.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/icons.min-1.css" rel="stylesheet" type="text/css">
         <!-- App Css-->
-        <link href="assests/css/app.min-1.css" id="app-style" rel="stylesheet" type="text/css">
+        <link href="assets/css/app.min-1.css" id="app-style" rel="stylesheet" type="text/css">
 
     </head>
 
@@ -33,7 +33,7 @@
                                 <div class="d-flex flex-column h-100">
                                     <div class="mb-4 mb-md-5 text-center">
                                         <a href="index-1.html" class="d-block auth-logo">
-                                            <img src="assests/picture/logo-sm-1.svg" alt="" height="28"> <span class="logo-txt">JJ</span>
+                                            <img src="assets/picture/logo-sm-1.svg" alt="" height="28"> <span class="logo-txt">JJ</span>
                                         </a>
                                     </div>
                                     <div class="auth-content my-auto">
@@ -154,7 +154,7 @@
                                                         <div class="mt-4 pt-3 pb-5">
                                                             <div class="d-flex align-items-start">
                                                                 <div class="flex-shrink-0">
-                                                                    <!-- <img src="../../assests/picture/avatar-1.jpg" class="avatar-md img-fluid rounded-circle" alt="..."> -->
+                                                                    <!-- <img src="../../assets/picture/avatar-1.jpg" class="avatar-md img-fluid rounded-circle" alt="..."> -->
                                                                 </div>
                                                                 <div class="flex-grow-1 ms-3 mb-4">
                                                                     <h5 class="font-size-18 text-white">San JoseMaría Escrivá de Balaguer</h5>
@@ -174,7 +174,7 @@
                                                         <div class="mt-4 pt-3 pb-5">
                                                             <div class="d-flex align-items-start">
                                                                 <div class="flex-shrink-0">
-                                                                   <!--  <img src="../../assests/picture/avatar-2.jpg" class="avatar-md img-fluid rounded-circle" alt="..."> -->
+                                                                   <!--  <img src="../../assets/picture/avatar-2.jpg" class="avatar-md img-fluid rounded-circle" alt="..."> -->
                                                                 </div>
                                                                 <div class="flex-grow-1 ms-3 mb-4">
                                                                     <h5 class="font-size-18 text-white">Julio Verne</h5>
@@ -194,7 +194,7 @@
                                                             sus nombres son cómo, cuándo, dónde, qué, quién y por qué.”</h4>
                                                         <div class="mt-4 pt-3 pb-5">
                                                             <div class="d-flex align-items-start">
-                                                                <!-- <img src="../../assests/picture/avatar-3.jpg" class="avatar-md img-fluid rounded-circle" alt="..."> -->
+                                                                <!-- <img src="../../assets/picture/avatar-3.jpg" class="avatar-md img-fluid rounded-circle" alt="..."> -->
                                                                 <div class="flex-1 ms-3 mb-4">
                                                                     <h5 class="font-size-18 text-white">Rudyard Kipling</h5>
                                                                     <p class="mb-0 text-white-50">Escritor británico...
@@ -223,16 +223,16 @@
 
 
         <!-- JAVASCRIPT -->
-        <script src="assests/js/jquery.min-1.js"></script>
-        <script src="assests/js/bootstrap.bundle.min-1.js"></script>
-        <script src="assests/js/metisMenu.min-1.js"></script>
-        <script src="assests/js/simplebar.min-1.js"></script>
-        <script src="assests/js/waves.min-1.js"></script>
-        <script src="assests/js/feather.min-1.js"></script>
+        <script src="assets/js/jquery.min-1.js"></script>
+        <script src="assets/js/bootstrap.bundle.min-1.js"></script>
+        <script src="assets/js/metisMenu.min-1.js"></script>
+        <script src="assets/js/simplebar.min-1.js"></script>
+        <script src="assets/js/waves.min-1.js"></script>
+        <script src="assets/js/feather.min-1.js"></script>
         <!-- pace js -->
-        <script src="assests/js/pace.min-1.js"></script>
+        <script src="assets/js/pace.min-1.js"></script>
         <!-- password addon init -->
-        <script src="assests/js/pass-addon.init-1.js"></script>
+        <script src="assets/js/pass-addon.init-1.js"></script>
 
     </body>
 

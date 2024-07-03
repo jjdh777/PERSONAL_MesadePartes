@@ -10,17 +10,17 @@
         <meta content="Themesbrand" name="author">
 
          <!-- Sweet Alert-->
-         <link href="../../assests/css/sweetalert2.min.css" rel="stylesheet" type="text/css">
+         <link href="../../assets/css/sweetalert2.min.css" rel="stylesheet" type="text/css">
 
         <!-- preloader css -->
-        <link rel="stylesheet" href="../../assests/css/preloader.min.css" type="text/css">
+        <link rel="stylesheet" href="../../assets/css/preloader.min.css" type="text/css">
 
         <!-- Bootstrap Css -->
-        <link href="../../assests/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css">
+        <link href="../../assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css">
         <!-- Icons Css -->
-        <link href="../../assests/css/icons.min.css" rel="stylesheet" type="text/css">
+        <link href="../../assets/css/icons.min.css" rel="stylesheet" type="text/css">
         <!-- App Css-->
-        <link href="../../assests/css/app.min.css" id="app-style" rel="stylesheet" type="text/css">
+        <link href="../../assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css">
 
     </head>
 
@@ -36,7 +36,7 @@
                                 <div class="d-flex flex-column h-100">
                                     <div class="mb-4 mb-md-5 text-center">
                                         <a href="index.html" class="d-block auth-logo">
-                                            <img src="../../assests/picture/logo-sm.svg" alt="" height="28"> <span class="logo-txt">JJ</span>
+                                            <img src="../../assets/picture/logo-sm.svg" alt="" height="28"> <span class="logo-txt">JJ</span>
                                         </a>
                                     </div>
                                     <div class="auth-content my-auto">
@@ -161,7 +161,7 @@
                                                         <div class="mt-4 pt-3 pb-5">
                                                             <div class="d-flex align-items-start">
                                                                 <div class="flex-shrink-0">
-                                                                    <!-- <img src="../../assests/picture/avatar-1.jpg" class="avatar-md img-fluid rounded-circle" alt="..."> -->
+                                                                    <!-- <img src="../../assets/picture/avatar-1.jpg" class="avatar-md img-fluid rounded-circle" alt="..."> -->
                                                                 </div>
                                                                 <div class="flex-grow-1 ms-3 mb-4">
                                                                     <h5 class="font-size-18 text-white">San JoseMaría Escrivá de Balaguer</h5>
@@ -181,7 +181,7 @@
                                                         <div class="mt-4 pt-3 pb-5">
                                                             <div class="d-flex align-items-start">
                                                                 <div class="flex-shrink-0">
-                                                                   <!--  <img src="../../assests/picture/avatar-2.jpg" class="avatar-md img-fluid rounded-circle" alt="..."> -->
+                                                                   <!--  <img src="../../assets/picture/avatar-2.jpg" class="avatar-md img-fluid rounded-circle" alt="..."> -->
                                                                 </div>
                                                                 <div class="flex-grow-1 ms-3 mb-4">
                                                                     <h5 class="font-size-18 text-white">Julio Verne</h5>
@@ -200,7 +200,7 @@
                                                         <h4 class="mt-4 fw-medium lh-base text-white">“Seis honrados servidores me enseñaron cuanto sé; sus nombres son cómo, cuándo, dónde, qué, quién y por qué.”</h4>
                                                         <div class="mt-4 pt-3 pb-5">
                                                             <div class="d-flex align-items-start">
-                                                                <!-- <img src="../../assests/picture/avatar-3.jpg" class="avatar-md img-fluid rounded-circle" alt="..."> -->
+                                                                <!-- <img src="../../assets/picture/avatar-3.jpg" class="avatar-md img-fluid rounded-circle" alt="..."> -->
                                                                 <div class="flex-1 ms-3 mb-4">
                                                                     <h5 class="font-size-18 text-white">Rudyard Kipling</h5>
                                                                     <p class="mb-0 text-white-50">Escritor británico
@@ -228,20 +228,20 @@
 
 
         <!-- JAVASCRIPT -->
-        <script src="../../assests/js/jquery.min.js"></script>
-        <script src="../../assests/js/bootstrap.bundle.min.js"></script>
-        <script src="../../assests/js/metisMenu.min.js"></script>
-        <script src="../../assests/js/simplebar.min.js"></script>
-        <script src="../../assests/js/waves.min.js"></script>
-        <script src="../../assests/js/feather.min.js"></script>
+        <script src="../../assets/js/jquery.min.js"></script>
+        <script src="../../assets/js/bootstrap.bundle.min.js"></script>
+        <script src="../../assets/js/metisMenu.min.js"></script>
+        <script src="../../assets/js/simplebar.min.js"></script>
+        <script src="../../assets/js/waves.min.js"></script>
+        <script src="../../assets/js/feather.min.js"></script>
         <!-- pace js -->
-        <script src="../../assests/js/pace.min.js"></script>
+        <script src="../../assets/js/pace.min.js"></script>
 
         <!-- Sweet Alerts js -->
-        <script src="../../assests/js/sweetalert2.min.js"></script>
+        <script src="../../assets/js/sweetalert2.min.js"></script>
 
         <!-- validation init -->
-        <!-- <script src="../../assests/js/validation.init.js"></script> -->
+        <!-- <script src="../../assets/js/validation.init.js"></script> -->
          <!-- validator JS -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/validator/13.6.0/validator.min.js"></script>
 

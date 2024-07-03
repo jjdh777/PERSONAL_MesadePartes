@@ -8,23 +8,9 @@
         protected $dbh;
         // TODO Metodo para establecer la conexion a la base de datos
         protected function conexion(){
-            if ($_SERVER['SERVER_NAME'] == 'localhost') {
-                // Modo local
-                $host="localhost";
-                $db="mesadepartes";
-                $user="usuario";
-                $pass="0x0sidewinder";
-            }else{
-                // Modo remoto
-                $host="gopitelecom.com";
-                $db="mesadepartes";
-                $user="usuario";
-                $pass="0x0sidewinder";
-            }
-
             try {
                 //TODO Estable POO
-                $conectar = $this->dbh = new PDO("mysql:host=$host;port=3306;dbname=$db",$user,$pass);
+                $conectar = $this->dbh = new PDO("mysql:local=localhost;port=3306;dbname=mesadepartes","usuario","0x0sidewinder");
                 return $conectar;
 
             } catch (Exception $e) {
