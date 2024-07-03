@@ -1,6 +1,10 @@
 <?php
     //TODO: Definicion de la clase  Usuario que extiende la clase Conectar
     class Usuario extends Conectar{
+
+        private $key = "MesaDePartesAnderCode";
+        private $cipher = "aes-256-cbc";
+        
         public function registrar_usuario($usu_nomape,$usu_correo,$usu_pass){
             
             $conectar = parent::conexion();
@@ -55,6 +59,31 @@
             /* TODO: Ejecutar la consulta SQL */
             $sql->execute();
             return $sql->fetchAll();
+        }
+
+        public function activar_usuario($usu_id){
+
+            $iv_dec = substr(base64_decode($usu_id), 0, openssl_cipher_iv_length($this->cipher));
+            $cifradoSinIV = substr(base64_decode($usu_id), openssl_cipher_iv_length($this->cipher));
+            $textoDecifrado = openssl_decrypt($cifradoSinIV, $this->cipher, $this->key, OPENSSL_RAW_DATA, $iv_dec);
+
+            /* TODO: Obtener la conexión a la base de datos utilizando el método de la clase padre */
+            $conectar = parent::conexion();
+            /* TODO: Establecer el juego de caracteres a UTF-8 utilizando el método de la clase padre */
+            parent::set_names();
+            /* TODO: Consulta SQL para insertar un nuevo usuario en la tabla tm_usuario */
+            $sql="UPDATE tm_usuario
+                    SET
+                        est=1,
+                        fech_acti = NOW()
+                    WHERE
+                        usu_id = ?";
+            /* TODO:Preparar la consulta SQL */
+            $sql=$conectar->prepare($sql);
+            /* TODO: Vincular los valores a los parámetros de la consulta */
+            $sql->bindValue(1,$textoDecifrado);
+            /* TODO: Ejecutar la consulta SQL */
+            $sql->execute();
         }
     }
 ?>
