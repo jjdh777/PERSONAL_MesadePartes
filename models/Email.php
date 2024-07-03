@@ -16,7 +16,7 @@ class Email extends PHPMailer{
     //private $key = "MesaDePartesAnderCode";
     //private $cipher = "aes-256-cbc";
 
-    public function registrar($usu_id){
+    public function registrar($usu_correo){
 
         $conexion = new Conectar();
 
@@ -39,7 +39,7 @@ class Email extends PHPMailer{
 
         $this->CharSet = 'UTF8';
         //$this->addAddress($datos[0]["usu_correo"]);
-        $this->addAddress("gopitelecom@gmail.com");
+        $this->addAddress($usu_correo);
         $this->IsHTML(true);
         $this->Subject = "Mesa de Partes";
 
@@ -47,7 +47,7 @@ class Email extends PHPMailer{
 
         $cuerpo = file_get_contents("../assets/email/registrar.html");
         //$cuerpo = str_replace("xlinkcorreourl",$url,$cuerpo);
-        $cuerpo= str_replace("xusuariocorreo",$usu_id,$cuerpo);
+        $cuerpo= str_replace("xusuariocorreo",$usu_correo,$cuerpo);
 
         $this->Body = $cuerpo;
         $this->AltBody = strip_tags("Confirmar Registro");
