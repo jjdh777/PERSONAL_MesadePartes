@@ -43,7 +43,8 @@
         // TODO Método estático que devuelve la ruta base del proyecto
         public static function ruta(){
             //return "http://localhost:1802/";
-            return "http://localhost/PERSONAL_MesadePartes/";
+            //return "http://localhost/PERSONAL_MesadePartes/";
+            return "http://localhost:1802/";
         }
 
     }

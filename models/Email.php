@@ -13,19 +13,19 @@ class Email extends PHPMailer{
     protected $gCorreo = 'alertas@gopitelecom.com';
     protected $gContrasena = 'Marta2012';
 
-    //private $key = "MesaDePartesAnderCode";
-    //private $cipher = "aes-256-cbc";
+    private $key = "MesaDePartesAnderCode";
+    private $cipher = "aes-256-cbc";
 
-    public function registrar($usu_correo){
+    public function registrar($usu_id){
 
         $conexion = new Conectar();
 
-        //$usuario = new Usuario();
-        //$datos = $usuario -> get_usuario_id($usu_id);
+        $usuario = new Usuario();
+        $datos = $usuario -> get_usuario_id($usu_id);
 
-        //$iv = openssl_random_pseudo_bytes(openssl_cipher_iv_length($this->cipher));
-        //$cifrado = openssl_encrypt($usu_id, $this->cipher, $this->key, OPENSSL_RAW_DATA, $iv);
-        //$textoCifrado = base64_encode($iv . $cifrado);
+        $iv = openssl_random_pseudo_bytes(openssl_cipher_iv_length($this->cipher));
+        $cifrado = openssl_encrypt($usu_id, $this->cipher, $this->key, OPENSSL_RAW_DATA, $iv);
+        $textoCifrado = base64_encode($iv . $cifrado);
 
         $this->IsSMTP();
         $this->Host = 'mail.gopitelecom.com';
@@ -39,11 +39,12 @@ class Email extends PHPMailer{
 
         $this->CharSet = 'UTF8';
         //$this->addAddress($datos[0]["usu_correo"]);
-        $this->addAddress($usu_correo);
+        //$this->addAddress($usu_correo);
+        $this->addAddress($datos[0]["usu_correo"]);
         $this->IsHTML(true);
         $this->Subject = "Mesa de Partes";
 
-        $url = $conexion->ruta() . "view/confirmar/";
+        $url = $conexion->ruta() . "view/confirmar/?id=" . $textoCifrado;
 
         //$url = $conexion->ruta() . "view/confirmar/?id=" . $textoCifrado;
 
