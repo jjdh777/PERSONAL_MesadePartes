@@ -20,8 +20,8 @@ class Email extends PHPMailer{
 
         $conexion = new Conectar();
 
-        $usuario = new Usuario();
-        $datos = $usuario -> get_usuario_id($usu_id);
+        //$usuario = new Usuario();
+        //$datos = $usuario -> get_usuario_id($usu_id);
 
         //$iv = openssl_random_pseudo_bytes(openssl_cipher_iv_length($this->cipher));
         //$cifrado = openssl_encrypt($usu_id, $this->cipher, $this->key, OPENSSL_RAW_DATA, $iv);
@@ -43,11 +43,14 @@ class Email extends PHPMailer{
         $this->IsHTML(true);
         $this->Subject = "Mesa de Partes";
 
+        $url = $conexion->ruta() . "view/confirmar/";
+
         //$url = $conexion->ruta() . "view/confirmar/?id=" . $textoCifrado;
 
         $cuerpo = file_get_contents("../assets/email/registrar.html");
         //$cuerpo = str_replace("xlinkcorreourl",$url,$cuerpo);
-        $cuerpo= str_replace("xusuariocorreo",$usu_correo,$cuerpo);
+        $cuerpo = str_replace("xlinkcorreourl",$url,$cuerpo);
+        //$cuerpo= str_replace("xusuariocorreo",$usu_correo,$cuerpo);
 
         $this->Body = $cuerpo;
         $this->AltBody = strip_tags("Confirmar Registro");
