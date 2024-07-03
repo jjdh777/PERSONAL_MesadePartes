@@ -14,12 +14,14 @@
                 $db="mesadepartes";
                 $user="usuario";
                 $pass="0x0sidewinder";
+		        //print "Local";
             }else{
                 // Modo remoto
-                $host="gopitelecom.com";
+                $host="135.125.74.179";
                 $db="mesadepartes";
                 $user="usuario";
                 $pass="0x0sidewinder";
+                //print "Remoto";
             }
 
             try {
