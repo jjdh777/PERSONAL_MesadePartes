@@ -1,3 +1,6 @@
+console.log("Hola...");
+
+
 $(document).ready(function(){
     const url = window.location.href;
     const params = new URLSearchParams(new URL(url).search);
