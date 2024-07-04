@@ -59,7 +59,7 @@
                         <!-- end auth full page content -->
                     </div>
 
-                    <?php require_once("../html/carrusel.php")?>
+                    <!-- <?php require_once("../html/carrusel.php")?>  -->
 
                 </div>
                 <!-- end row -->
