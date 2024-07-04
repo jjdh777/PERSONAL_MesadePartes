@@ -47,13 +47,13 @@
                                         <form id="mnt_form" class="needs-validation custom-form mt-4 pt-2" novalidate="" action="index.html">
                                             <div class="mb-3">
                                                 <label for="usu_correo" class="form-label">Correo Electrónico</label>
-                                                <input type="text" class="form-control" id="usu_correo" name="usu_correo" placeholder="Ingrese Correo Electronico" required="">  
+                                                <input type="text" class="form-control" id="usu_correo" name="usu_correo" placeholder="Ingrese Correo Electronico" required="" value="gopitelecom@gmail.com">  
                                                 <div class="validation-error text-danger"></div>      
                                             </div>
                     
                                             <div class="mb-3">
                                                 <label for="usu_nomape" class="form-label">Nombres y Apellidos</label>
-                                                <input type="text" class="form-control" id="usu_nomape" name="usu_nomape" placeholder="Ingrese Nombres" required="">
+                                                <input type="text" class="form-control" id="usu_nomape" name="usu_nomape" placeholder="Ingrese Nombres" required=""" value="gopitelecom@gmail.com">  
                                                 <div class="validation-error text-danger"></div>      
                                                <!--  <div class="invalid-feedback">
                                                     Ingrese Nombre
@@ -62,7 +62,7 @@
 
                                             <div class="mb-3">
                                                 <label for="usu_pass" class="form-label">Contraseña</label>
-                                                <input type="password" class="form-control" id="usu_pass" name="usu_pass" placeholder="Ingrese Contraseña" required="">
+                                                <input type="password" class="form-control" id="usu_pass" name="usu_pass" placeholder="Ingrese Contraseña" required="" " value="gopitelecom@gmail.com">  
                                                 <div class="validation-error text-danger"></div>      
                                                <!--  <div class="invalid-feedback">
                                                     Ingrese Contraseña
@@ -71,7 +71,7 @@
 
                                             <div class="mb-3">
                                                 <label for="usu_pass_confir" class="form-label">Confirmar Contraseña</label>
-                                                <input type="password" class="form-control" id="usu_pass_confir" name="usu_pass_confir" placeholder="Confirmar Contraseña" required="">
+                                                <input type="password" class="form-control" id="usu_pass_confir" name="usu_pass_confir" placeholder="Confirmar Contraseña" required="" " value="gopitelecom@gmail.com">  
                                                 <div class="validation-error text-danger"></div>      
                                                 <!-- <div class="invalid-feedback">
                                                     Confirmar Contraseña

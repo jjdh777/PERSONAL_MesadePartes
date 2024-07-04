@@ -63,9 +63,12 @@
 
         public function activar_usuario($usu_id){
 
-            $iv_dec = substr(base64_decode($usu_id), 0, openssl_cipher_iv_length($this->cipher));
+            /* $iv_dec = substr(base64_decode($usu_id), 0, openssl_cipher_iv_length($this->cipher));
             $cifradoSinIV = substr(base64_decode($usu_id), openssl_cipher_iv_length($this->cipher));
             $textoDecifrado = openssl_decrypt($cifradoSinIV, $this->cipher, $this->key, OPENSSL_RAW_DATA, $iv_dec);
+ */
+           
+
 
             /* TODO: Obtener la conexión a la base de datos utilizando el método de la clase padre */
             $conectar = parent::conexion();
@@ -81,7 +84,8 @@
             /* TODO:Preparar la consulta SQL */
             $sql=$conectar->prepare($sql);
             /* TODO: Vincular los valores a los parámetros de la consulta */
-            $sql->bindValue(1,$textoDecifrado);
+            //$sql->bindValue(1,$textoDecifrado);
+            $sql->bindValue(1,$usu_id);
             /* TODO: Ejecutar la consulta SQL */
             $sql->execute();
         }

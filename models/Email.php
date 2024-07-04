@@ -44,7 +44,8 @@ class Email extends PHPMailer{
         $this->IsHTML(true);
         $this->Subject = "Mesa de Partes";
 
-        $url = $conexion->ruta() . "view/confirmar/?id=" . $textoCifrado;
+        //$url = $conexion->ruta() . "view/confirmar/?id=" . $textoCifrado;
+        $url = $conexion->ruta() . "view/confirmar/?id=" . $usu_id;
 
         //$url = $conexion->ruta() . "view/confirmar/?id=" . $textoCifrado;
 
