@@ -43,7 +43,7 @@
                                             </div>
                                             <div class="p-2 mt-4">
                                                 <h4>Gracias por Confirmar !</h4>
-                                                <p class="text-muted">Su cuenta ha sido validada, ya puede regresar a la pantalla principal y acceder al sistema de Mesa de Partes.</p>
+                                                <p class="text-muted">Su cuenta a sido validada, ya puede regresar a la pantalla principal y acceder al sistema de Mesa de Partes.</p>
                                                 <div class="mt-4">
                                                     <a href="../../index.php" class="btn btn-primary w-100">Regresar a Acceder</a>
                                                 </div>
@@ -59,7 +59,7 @@
                         <!-- end auth full page content -->
                     </div>
 
-                    <!-- <?php require_once("../html/carrusel.php")?>  -->
+                    <?php require_once("../html/carrusel.php")?>
 
                 </div>
                 <!-- end row -->

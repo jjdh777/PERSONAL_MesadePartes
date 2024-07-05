@@ -8,21 +8,21 @@
         protected $dbh;
         // TODO Metodo para establecer la conexion a la base de datos
         protected function conexion(){
-            if ($_SERVER['SERVER_NAME'] == 'localhost') {
+           /*  if ($_SERVER['SERVER_NAME'] == 'localhost') { */
                 // Modo local
                 $host="localhost";
                 $db="mesadepartes";
                 $user="usuario";
                 $pass="0x0sidewinder";
 		        //print "Local";
-            }else{
+          /*   }else{
                 // Modo remoto
                 $host="135.125.74.179";
                 $db="mesadepartes";
                 $user="usuario";
                 $pass="0x0sidewinder";
                 //print "Remoto";
-            }
+            } */
 
             try {
                 //TODO Estable POO
@@ -44,7 +44,7 @@
         public static function ruta(){
             //return "http://localhost:1802/";
             //return "http://localhost/PERSONAL_MesadePartes/";
-            return "http://localhost:1802/";
+            return "http://localhost/";
         }
 
     }
