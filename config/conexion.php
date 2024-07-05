@@ -1,53 +1,39 @@
 <?php
-    //TODO Inicia la sesion si no esta inciciada
+    /* TODO:Inicia la session (si no esta iniciada) */
     session_start();
 
-    //TODO Definicion de la clase conecta
+    /* BD-Produccion:u831978754_mesadepartes
+    User_Produccion:u831978754_andercode
+    Pass:AnderCode100K */
+
+    /* TODO: Definición de la clase Conectar */
     class Conectar{
-        // TODO Propiedad protegida para almacenar la BBDD
+        /* TODO: Propiedad protegida para almacenar la conexión a la base de datos */
         protected $dbh;
-        // TODO Metodo para establecer la conexion a la base de datos
+
+        /* TODO: Método para establecer la conexión a la base de datos */
         protected function conexion(){
-           /*  if ($_SERVER['SERVER_NAME'] == 'localhost') { */
-                // Modo local
-                $host="localhost";
-                $db="mesadepartes";
-                $user="usuario";
-                $pass="0x0sidewinder";
-		        //print "Local";
-          /*   }else{
-                // Modo remoto
-                $host="135.125.74.179";
-                $db="mesadepartes";
-                $user="usuario";
-                $pass="0x0sidewinder";
-                //print "Remoto";
-            } */
-
-            try {
-                //TODO Estable POO
-                $conectar = $this->dbh = new PDO("mysql:host=$host;port=3306;dbname=$db",$user,$pass);
+            try{
+                /* TODO: Intenta establecer la conexión utilizando PDO */
+                 $conectar = $this->dbh = new PDO("mysql:local=localhost;dbname=mesadepartes","usuario","0x0sidewinder");
+                /* $conectar = $this->dbh = new PDO("mysql:local=localhost;dbname=mesadepartes","root",""); */
                 return $conectar;
-
-            } catch (Exception $e) {
-                //TODO Error
-                print "Error DB:" . $e->getMessage() . "<br>";
+            }catch(Exception $e){
+                /* TODO: En caso de error, imprime un mensaje y termina el script */
+                print "Error BD:" . $e->getMessage() . "<br>";
                 die();
             }
         }
-        // TODO Establece a utf8
+
+        /* TODO: Método para establecer el juego de caracteres a UTF-8 */
         public function set_names(){
             return $this->dbh->query("SET NAMES 'utf8'");
-
         }
-        // TODO Método estático que devuelve la ruta base del proyecto
+
+        /* TODO: Método estático que devuelve la ruta base del proyecto */
         public static function ruta(){
-            //return "http://localhost:1802/";
-            //return "http://localhost/PERSONAL_MesadePartes/";
-            return "http://localhost/";
+            return "https://127.0.0.1/";
+            /* return "http://localhost/PERSONAL_MesadePartes/"; */
         }
-
     }
-
-
 ?>

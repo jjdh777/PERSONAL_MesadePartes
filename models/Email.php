@@ -6,7 +6,7 @@ use PHPMailer\PHPMailer\Exception;
 
 require_once("../config/conexion.php");
 require_once("../models/Usuario.php");
-//require_once("../models/Documento.php");
+require_once("../models/Documento.php");
 
 class Email extends PHPMailer{
 
@@ -38,21 +38,14 @@ class Email extends PHPMailer{
         $this->setFrom($this->gCorreo,"Registro en Mesa de Partes AnderCode");
 
         $this->CharSet = 'UTF8';
-        //$this->addAddress($datos[0]["usu_correo"]);
-        //$this->addAddress($usu_correo);
         $this->addAddress($datos[0]["usu_correo"]);
         $this->IsHTML(true);
         $this->Subject = "Mesa de Partes";
 
-        //$url = $conexion->ruta() . "view/confirmar/?id=" . $textoCifrado;
-        $url = $conexion->ruta() . "view/confirmar/?id=" . $usu_id;
-
-        //$url = $conexion->ruta() . "view/confirmar/?id=" . $textoCifrado;
+        $url = $conexion->ruta() . "view/confirmar/?id=" . $textoCifrado;
 
         $cuerpo = file_get_contents("../assets/email/registrar.html");
-        //$cuerpo = str_replace("xlinkcorreourl",$url,$cuerpo);
         $cuerpo = str_replace("xlinkcorreourl",$url,$cuerpo);
-        //$cuerpo= str_replace("xusuariocorreo",$usu_correo,$cuerpo);
 
         $this->Body = $cuerpo;
         $this->AltBody = strip_tags("Confirmar Registro");
@@ -65,7 +58,7 @@ class Email extends PHPMailer{
         }
     }
 
-   /*  public function recuperar($usu_correo,$rol_id){
+    public function recuperar($usu_correo,$rol_id){
 
         $conexion = new Conectar();
 
@@ -73,7 +66,7 @@ class Email extends PHPMailer{
         $datos = $usuario -> get_usuario_correo($usu_correo);
 
         $this->IsSMTP();
-        $this->Host = 'mail.gopitelecom.com';
+        $this->Host = 'smtp.hostinger.com';
         $this->Port = 587;//Aqui el puerto
         $this->SMTPAuth = true;
         $this->SMTPSecure = 'tls';
@@ -121,7 +114,7 @@ class Email extends PHPMailer{
         $datos = $usuario -> get_usuario_id($usu_id);
 
         $this->IsSMTP();
-        $this->Host = 'mail.gopitelecom.com';
+        $this->Host = 'smtp.hostinger.com';
         $this->Port = 587;//Aqui el puerto
         $this->SMTPAuth = true;
         $this->SMTPSecure = 'tls';
@@ -173,7 +166,7 @@ class Email extends PHPMailer{
         $datos = $documento -> get_documento_x_id($doc_id);
 
         $this->IsSMTP();
-        $this->Host = 'mail.gopitelecom.com';
+        $this->Host = 'smtp.hostinger.com';
         $this->Port = 587;//Aqui el puerto
         $this->SMTPAuth = true;
         $this->SMTPSecure = 'tls';
@@ -219,7 +212,7 @@ class Email extends PHPMailer{
         $datos = $documento -> get_documento_x_id($doc_id);
 
         $this->IsSMTP();
-        $this->Host = 'mail.gopitelecom.com';
+        $this->Host = 'smtp.hostinger.com';
         $this->Port = 587;//Aqui el puerto
         $this->SMTPAuth = true;
         $this->SMTPSecure = 'tls';
@@ -254,7 +247,7 @@ class Email extends PHPMailer{
         }catch(Exception $e){
             return false;
         }
-    } */
+    }
 
 }
 ?>

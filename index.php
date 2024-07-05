@@ -1,29 +1,32 @@
+<?php
+    require_once("config/conexion.php");
+    if(isset($_POST["enviar"]) and $_POST["enviar"]=="si"){
+        require_once("models/Usuario.php");
+        $usuario=new Usuario();
+        $usuario->login();
+    }
+?>
 <!doctype html>
 <html lang="es">
-
     <head>
-
         <meta charset="utf-8">
-        <title>Acceso | Minia - Minimal Admin & Dashboard Template</title>
+        <title>Acceso | AnderCode - Mesa de Partes</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description">
         <meta content="Themesbrand" name="author">
-
         <!-- preloader css -->
         <link rel="stylesheet" href="assets/css/preloader.min-1.css" type="text/css">
-
         <!-- Bootstrap Css -->
         <link href="assets/css/bootstrap.min-1.css" id="bootstrap-style" rel="stylesheet" type="text/css">
         <!-- Icons Css -->
         <link href="assets/css/icons.min-1.css" rel="stylesheet" type="text/css">
         <!-- App Css-->
         <link href="assets/css/app.min-1.css" id="app-style" rel="stylesheet" type="text/css">
-
     </head>
 
     <body>
 
-    <!-- <body data-layout="horizontal"> -->
+        <!-- <body data-layout="horizontal"> -->
         <div class="auth-page">
             <div class="container-fluid p-0">
                 <div class="row g-0">
@@ -33,18 +36,55 @@
                                 <div class="d-flex flex-column h-100">
                                     <div class="mb-4 mb-md-5 text-center">
                                         <a href="index-1.html" class="d-block auth-logo">
-                                            <img src="assets/picture/logo-sm-1.svg" alt="" height="28"> <span class="logo-txt">JJ</span>
+                                            <img src="assets/picture/logo-sm-1.svg" alt="" height="28"> <span class="logo-txt">AnderCode</span>
                                         </a>
                                     </div>
                                     <div class="auth-content my-auto">
                                         <div class="text-center">
                                             <h5 class="mb-0">Mesa de Partes</h5>
-                                            <p class="text-muted mt-2">Ingrese sus credeciales.</p>
+                                            <p class="text-muted mt-2">Ingrese sus credenciales.</p>
                                         </div>
-                                        <form class="custom-form mt-4 pt-2">
+                                        <form class="custom-form mt-4 pt-2" action="" method="post">
+
+                                            <?php
+                                                if(isset($_GET["m"])){
+                                                    switch($_GET["m"]){
+                                                        case "1":
+                                                            ?>
+                                                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                                    <i class="mdi mdi-block-helper me-2"></i>
+                                                                    Correo Electronico no encontrado.
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                                                </div>
+                                                            <?php
+                                                            break;
+
+                                                        case "2":
+                                                            ?>
+                                                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                                    <i class="mdi mdi-block-helper me-2"></i>
+                                                                    Campos Vacios.
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                                                </div>
+                                                            <?php
+                                                            break;
+
+                                                        case "3":
+                                                            ?>
+                                                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                                    <i class="mdi mdi-block-helper me-2"></i>
+                                                                    Contraseña Incorrecta.
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                                                </div>
+                                                            <?php
+                                                            break;
+                                                    }
+                                                }
+                                            ?>
+
                                             <div class="mb-3">
-                                                <label class="form-label">Correo Electrónico</label>
-                                                <input type="text" class="form-control" id="usu_correo" placeholder="Ingrese su Correo Electrónico">
+                                                <label class="form-label">Correo Electronico</label>
+                                                <input type="email" class="form-control" id="usu_correo" name="usu_correo" placeholder="Ingrese Correo Electronico" required>
                                             </div>
                                             <div class="mb-3">
                                                 <div class="d-flex align-items-start">
@@ -53,13 +93,13 @@
                                                     </div>
                                                     <div class="flex-shrink-0">
                                                         <div class="">
-                                                            <a href="auth-recoverpw-1.html" class="text-muted">Olvidaste tu contraseña?</a>
+                                                            <a href="view/recuperar/index.php" class="text-muted">Olvidaste tu contraseña?</a>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                
+
                                                 <div class="input-group auth-pass-inputgroup">
-                                                    <input type="password" class="form-control" placeholder="Ingrese Contraseña" aria-label="Password" aria-describedby="password-addon">
+                                                    <input type="password" class="form-control" id="usu_pass" name="usu_pass" placeholder="Ingrese Contraseña" aria-label="Password" aria-describedby="password-addon" required>
                                                     <button class="btn btn-light shadow-none ms-0" type="button" id="password-addon"><i class="mdi mdi-eye-outline"></i></button>
                                                 </div>
                                             </div>
@@ -70,45 +110,57 @@
                                                         <label class="form-check-label" for="remember-check">
                                                             Recuerdame
                                                         </label>
-                                                    </div>  
+                                                    </div>
                                                 </div>
-                                                
+
                                             </div>
                                             <div class="mb-3">
+                                                <input type="hidden" name="enviar" value="si">
                                                 <button class="btn btn-primary w-100 waves-effect waves-light" type="submit">Acceder</button>
                                             </div>
                                         </form>
 
-                                        <!-- <div class="mt-4 pt-2 text-center">
+                                        <div class="mt-4 pt-2 text-center">
                                             <div class="signin-other-title">
                                                 <h5 class="font-size-14 mb-3 text-muted fw-medium">- Acceder con -</h5>
                                             </div>
 
                                             <ul class="list-inline mb-0">
+
                                                 <li class="list-inline-item">
-                                                    <a href="javascript:void()" class="social-list-item bg-primary text-white border-primary">
-                                                        <i class="mdi mdi-facebook"></i>
-                                                    </a>
+
+                                                    <!--TODO: Botón "Iniciar sesión con Google" con atributos de datos HTML para la API -->
+                                                    <div id="g_id_onload"
+                                                        data-client_id="592225408682-ope7ptac6m0b5gh5lnusoe1pm92shrph.apps.googleusercontent.com"
+                                                        data-context="signin"
+                                                        data-ux_mode="popup"
+                                                        data-callback="handleCredentialResponse"
+                                                        data-auto_prompt="false"
+                                                    >
+                                                    </div>
+
+                                                    <!--TODO: Configuración del botón de inicio de sesión con Google -->
+                                                    <div class="g_id_signin"
+                                                        data-type="standard"
+                                                        data-shape="rectangular"
+                                                        data-theme="outline"
+                                                        data-text="signin_with"
+                                                        data-size="large"
+                                                        data-logo_alignment="left"
+                                                    ></div>
+
                                                 </li>
-                                                <li class="list-inline-item">
-                                                    <a href="javascript:void()" class="social-list-item bg-info text-white border-info">
-                                                        <i class="mdi mdi-twitter"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="javascript:void()" class="social-list-item bg-danger text-white border-danger">
-                                                        <i class="mdi mdi-google"></i>
-                                                    </a>
-                                                </li>
+
                                             </ul>
-                                        </div> -->
+                                        </div>
 
                                         <div class="mt-5 text-center">
                                             <p class="text-muted mb-0">No tienes cuenta? <a href="view/registro/" class="text-primary fw-semibold"> Registrate </a> </p>
+                                            <p class="text-muted mb-0">Eres al colaborador?<a href="view/accesopersonal/" class="text-primary fw-semibold"> Acceder </a> </p>
                                         </div>
                                     </div>
                                     <div class="mt-4 mt-md-5 text-center">
-                                        <p class="mb-0">© <script>document.write(new Date().getFullYear())</script> AnderCode. <i class="mdi mdi-heart text-danger"></i> by JJ</p>
+                                        <p class="mb-0">© <script>document.write(new Date().getFullYear())</script> AnderCode <i class="mdi mdi-heart text-danger"></i> anderson-bastidas.com</p>
                                     </div>
                                 </div>
                             </div>
@@ -147,18 +199,22 @@
                                                     <div class="testi-contain text-white">
                                                         <i class="bx bxs-quote-alt-left text-success display-6"></i>
 
-                                                        <h4 class="mt-4 fw-medium lh-base text-white">“No es camino acertado, para la educación, la imposición autoritaria y violenta. 
-                                                            El ideal de los padres se concreta más bien en llegar a ser amigos de sus hijos: amigos a los que se confían las inquietudes, 
-                                                            con quienes se consultan los problemas, de los que se espera una ayuda eficaz y amable». (San Josemaría, Es Cristo que pasa, n. 27).”
+                                                        <h4 class="mt-4 fw-medium lh-base text-white">“I feel confident
+                                                            imposing change
+                                                            on myself. It's a lot more progressing fun than looking back.
+                                                            That's why
+                                                            I ultricies enim
+                                                            at malesuada nibh diam on tortor neaded to throw curve balls.”
                                                         </h4>
                                                         <div class="mt-4 pt-3 pb-5">
                                                             <div class="d-flex align-items-start">
                                                                 <div class="flex-shrink-0">
-                                                                    <!-- <img src="../../assets/picture/avatar-1.jpg" class="avatar-md img-fluid rounded-circle" alt="..."> -->
+                                                                    <img src="assets/picture/avatar-1-1.jpg" class="avatar-md img-fluid rounded-circle" alt="...">
                                                                 </div>
                                                                 <div class="flex-grow-1 ms-3 mb-4">
-                                                                    <h5 class="font-size-18 text-white">San JoseMaría Escrivá de Balaguer</h5>
-                                                                    <p class="mb-0 text-white-50">Sacerdote español, fundador en 1928 del Opus Dei y santo de la Iglesia católica</p>
+                                                                    <h5 class="font-size-18 text-white">Richard Drews
+                                                                    </h5>
+                                                                    <p class="mb-0 text-white-50">Web Designer</p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -169,17 +225,21 @@
                                                     <div class="testi-contain text-white">
                                                         <i class="bx bxs-quote-alt-left text-success display-6"></i>
 
-                                                        <h4 class="mt-4 fw-medium lh-base text-white">“No necesitamos continentes nuevos, 
-                                                            sino personas nuevas”</h4>
+                                                        <h4 class="mt-4 fw-medium lh-base text-white">“Our task must be to
+                                                            free ourselves by widening our circle of compassion to embrace
+                                                            all living
+                                                            creatures and
+                                                            the whole of quis consectetur nunc sit amet semper justo. nature
+                                                            and its beauty.”</h4>
                                                         <div class="mt-4 pt-3 pb-5">
                                                             <div class="d-flex align-items-start">
                                                                 <div class="flex-shrink-0">
-                                                                   <!--  <img src="../../assets/picture/avatar-2.jpg" class="avatar-md img-fluid rounded-circle" alt="..."> -->
+                                                                    <img src="assets/picture/avatar-2-1.jpg" class="avatar-md img-fluid rounded-circle" alt="...">
                                                                 </div>
                                                                 <div class="flex-grow-1 ms-3 mb-4">
-                                                                    <h5 class="font-size-18 text-white">Julio Verne</h5>
-                                                                    
-                                                                    <p class="mb-0 text-white-50">Escritor, dramaturgo​ y poeta​ francés</p>
+                                                                    <h5 class="font-size-18 text-white">Rosanna French
+                                                                    </h5>
+                                                                    <p class="mb-0 text-white-50">Web Developer</p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -190,15 +250,18 @@
                                                     <div class="testi-contain text-white">
                                                         <i class="bx bxs-quote-alt-left text-success display-6"></i>
 
-                                                        <h4 class="mt-4 fw-medium lh-base text-white">“Seis honrados servidores me enseñaron cuanto sé; 
-                                                            sus nombres son cómo, cuándo, dónde, qué, quién y por qué.”</h4>
+                                                        <h4 class="mt-4 fw-medium lh-base text-white">“I've learned that
+                                                            people will forget what you said, people will forget what you
+                                                            did,
+                                                            but people will never forget
+                                                            how donec in efficitur lectus, nec lobortis metus you made them
+                                                            feel.”</h4>
                                                         <div class="mt-4 pt-3 pb-5">
                                                             <div class="d-flex align-items-start">
-                                                                <!-- <img src="../../assets/picture/avatar-3.jpg" class="avatar-md img-fluid rounded-circle" alt="..."> -->
+                                                                <img src="assets/picture/avatar-3-1.jpg" class="avatar-md img-fluid rounded-circle" alt="...">
                                                                 <div class="flex-1 ms-3 mb-4">
-                                                                    <h5 class="font-size-18 text-white">Rudyard Kipling</h5>
-                                                                    <p class="mb-0 text-white-50">Escritor británico...
-                                            
+                                                                    <h5 class="font-size-18 text-white">Ilse R. Eaton</h5>
+                                                                    <p class="mb-0 text-white-50">Manager
                                                                     </p>
                                                                 </div>
                                                             </div>
@@ -221,19 +284,21 @@
             <!-- end container fluid -->
         </div>
 
-
         <!-- JAVASCRIPT -->
         <script src="assets/js/jquery.min-1.js"></script>
         <script src="assets/js/bootstrap.bundle.min-1.js"></script>
         <script src="assets/js/metisMenu.min-1.js"></script>
         <script src="assets/js/simplebar.min-1.js"></script>
-        <script src="assets/js/waves.min-1.js"></script>
+        <script src="assets/js/waves.min.js"></script>
         <script src="assets/js/feather.min-1.js"></script>
         <!-- pace js -->
         <script src="assets/js/pace.min-1.js"></script>
         <!-- password addon init -->
         <script src="assets/js/pass-addon.init-1.js"></script>
+        <!--TODO: Script para cargar la API de Google Sign-In de manera asíncrona -->
+        <script src="https://accounts.google.com/gsi/client" async></script>
 
+        <script type="text/javascript" src="acceso.js"></script>
     </body>
 
 </html>
