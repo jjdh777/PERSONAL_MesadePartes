@@ -42,7 +42,7 @@
                                     <div class="auth-content my-auto">
                                         <div class="text-center">
                                             <h5 class="mb-0">Mesa de Partes</h5>
-                                            <p class="text-muted mt-2">Ingrese sus credenciales.</p>
+                                            <p class="text-muted mt-2">Ingrese sus credenciales...</p>
                                         </div>
                                         <form class="custom-form mt-4 pt-2" action="" method="post">
 
