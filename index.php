@@ -131,7 +131,7 @@
 
                                                     <!--TODO: Botón "Iniciar sesión con Google" con atributos de datos HTML para la API -->
                                                     <div id="g_id_onload"
-                                                        data-client_id="592225408682-ope7ptac6m0b5gh5lnusoe1pm92shrph.apps.googleusercontent.com"
+                                                        data-client_id="582360941668-q81ce74c5398osa7l9k9a6c800te801a.apps.googleusercontent.com"
                                                         data-context="signin"
                                                         data-ux_mode="popup"
                                                         data-callback="handleCredentialResponse"

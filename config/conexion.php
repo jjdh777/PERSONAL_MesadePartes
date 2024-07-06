@@ -32,7 +32,8 @@
 
         /* TODO: Método estático que devuelve la ruta base del proyecto */
         public static function ruta(){
-            return "https://127.0.0.1/";
+            /* return "https://127.0.0.1/"; */
+            return "https://mesadepartes.gopitelecom.com/";
             /* return "http://localhost/PERSONAL_MesadePartes/"; */
         }
     }
